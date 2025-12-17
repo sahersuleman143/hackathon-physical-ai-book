@@ -7,8 +7,6 @@ yarn-error.log*
 # Environment variables
 .env*
 !.env.example
-# Ignore Windows reserved file
-
 
 # Build outputs
 dist/
@@ -36,6 +34,7 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
+nul
 
 # IDE
 .vscode/
@@ -98,6 +97,3 @@ UserSettings/
 *.world~
 *.urdf~
 *.sdf~
-   
-# Ignore Windows reserved file
-nul
