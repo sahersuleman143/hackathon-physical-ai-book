@@ -8,7 +8,7 @@ yarn-error.log*
 .env*
 !.env.example
 # Ignore Windows reserved file
-nul
+
 
 # Build outputs
 dist/
@@ -98,3 +98,6 @@ UserSettings/
 *.world~
 *.urdf~
 *.sdf~
+   
+# Ignore Windows reserved file
+nul
