@@ -1,0 +1,144 @@
+# Simulation API Contract
+
+## Overview
+This document defines the API contract for the Digital Twin simulation system, enabling communication between Gazebo simulation, Unity visualization, and the documentation system.
+
+## Base URL
+```
+http://localhost:8080/api/v1
+```
+
+## Data Models
+
+### Robot State
+```json
+{
+  "id": "string",
+  "timestamp": "number",
+  "position": {
+    "x": "number",
+    "y": "number",
+    "z": "number"
+  },
+  "orientation": {
+    "qx": "number",
+    "qy": "number",
+    "qz": "number",
+    "qw": "number"
+  },
+  "joint_states": {
+    "joint_name": "number"
+  },
+  "velocity": {
+    "linear": {
+      "x": "number",
+      "y": "number",
+      "z": "number"
+    },
+    "angular": {
+      "x": "number",
+      "y": "number",
+      "z": "number"
+    }
+  }
+}
+```
+
+### Sensor Data
+```json
+{
+  "sensor_id": "string",
+  "sensor_type": "enum: lidar, depth_camera, imu",
+  "timestamp": "number",
+  "data": "object",
+  "frame_id": "string"
+}
+```
+
+## Endpoints
+
+### GET /simulation/state
+Get the current state of the simulation.
+
+**Response 200:**
+```json
+{
+  "simulation_time": "number",
+  "robots": ["Robot State"],
+  "sensors": ["Sensor Data"],
+  "environment": "object"
+}
+```
+
+### POST /simulation/control
+Send control commands to the simulation.
+
+**Request:**
+```json
+{
+  "robot_id": "string",
+  "command": "object",
+  "timestamp": "number"
+}
+```
+
+**Response 200:**
+```json
+{
+  "status": "success",
+  "command_id": "string"
+}
+```
+
+### GET /simulation/export
+Export simulation data for Unity visualization.
+
+**Response 200:**
+```json
+{
+  "export_data": "object",
+  "format": "gltf|fbx|obj",
+  "timestamp": "number"
+}
+```
+
+### POST /simulation/import
+Import simulation data from Unity.
+
+**Request:**
+```json
+{
+  "import_data": "object",
+  "source": "unity",
+  "timestamp": "number"
+}
+```
+
+**Response 200:**
+```json
+{
+  "status": "success",
+  "import_id": "string"
+}
+```
+
+## Error Responses
+
+All endpoints may return the following error responses:
+
+**400 Bad Request:**
+```json
+{
+  "error": "string",
+  "code": "string",
+  "details": "object"
+}
+```
+
+**500 Internal Server Error:**
+```json
+{
+  "error": "Internal server error",
+  "code": "INTERNAL_ERROR"
+}
+```
