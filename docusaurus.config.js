@@ -6,7 +6,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Production URL
-  url: 'https://sahersuleman143.github.io',
+  url: 'https://hackathon-physical-ai-book-ebon.vercel.app',
 
   // GitHub Pages project base path
   baseUrl: '/',
@@ -33,7 +33,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/sahersuleman143/hackathon-physical-ai-book/tree/main/',
-          routeBasePath: 'docs',
+          routeBasePath: '/',
         },
         blog: false, // Blog disabled
         theme: {
