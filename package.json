@@ -19,24 +19,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sahersuleman143/hackathon-physical-ai-book.git"
+    "url": "https://github.com/sahersuleman143/hackathon-physical-ai-book.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "common js",
   "bugs": {
     "url": "https://github.com/sahersuleman143/hackathon-physical-ai-book/issues"
   },
-  "homepage": "https://github.com/sahersuleman143/hackathon-physical-ai-book#readme",
+  "homepage": "https://github.com/sahersuleman143/hackathon-physical-ai-book",
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "gazebo-urdf-parser": "^1.0.0",
-    "three": "^0.160.0",
-    "robot-simulation-core": "^1.2.0",
-    "simulation-data-processor": "^0.8.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.160.0"
   }
 }
