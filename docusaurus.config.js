@@ -9,7 +9,8 @@ const config = {
   url: 'https://sahersuleman143.github.io',
 
   // GitHub Pages project base path
-  baseUrl: '/hackathon-physical-ai-book/',
+  baseUrl: '/',
+
 
   // GitHub deployment config
   organizationName: 'sahersuleman143',
