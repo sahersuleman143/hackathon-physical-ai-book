@@ -1,0 +1,75 @@
+# Voice Command Processing Flow Diagram
+
+## Description of the Voice Command Processing Flow
+
+This diagram illustrates the complete flow of voice command processing in the Vision-Language-Action (VLA) system:
+
+```
+[User Speaks Command]
+         │
+         ▼
+[Audio Capture Module]
+         │
+         ▼
+[Audio Preprocessing]
+         │
+         ▼
+[Whisper API Transcription]
+         │
+         ▼
+[Text Validation & Confidence Scoring]
+         │
+         ▼
+[Voice Command Object Creation]
+         │
+         ▼
+[Intent Interpretation via LLM]
+         │
+         ▼
+[Action Plan Generation]
+         │
+         ▼
+[Robot Action Execution]
+         │
+         ▼
+[Feedback to User]
+```
+
+## Detailed Process Steps
+
+1. **Audio Capture**: Captures voice input from microphone or file
+2. **Preprocessing**: Normalizes audio, removes silence, enhances quality
+3. **Whisper Transcription**: Converts speech to text using OpenAI Whisper
+4. **Validation**: Checks command validity and calculates confidence score
+5. **Command Creation**: Creates VoiceCommand object with metadata
+6. **Intent Interpretation**: Uses LLM to understand command intent
+7. **Action Planning**: Generates sequence of robot actions
+8. **Execution**: Executes actions on the humanoid robot
+9. **Feedback**: Provides confirmation or error feedback to user
+
+## Key Components
+
+- **VoiceCapturePipeline**: Handles audio input from various sources
+- **WhisperIntegration**: Interfaces with OpenAI Whisper API
+- **VoiceCommandValidator**: Validates and scores commands
+- **VoiceIntentInterpreter**: Interprets command intent using LLM
+- **CognitivePlanner**: Generates action plans
+- **ActionExecutor**: Executes robot actions
+
+## Quality Checks
+
+- Audio quality validation
+- Command structure validation
+- Confidence threshold enforcement
+- Safety protocol checks
+- Environmental context validation
+
+## Error Handling
+
+- Network failure recovery
+- API error handling
+- Invalid command rejection
+- Safety violation prevention
+```
+
+This flow diagram represents the complete voice command processing pipeline in the VLA system, showing how natural language commands are transformed into robot actions.
